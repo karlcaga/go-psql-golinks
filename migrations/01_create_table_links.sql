@@ -1,1 +1,6 @@
-CREATE TABLE links(id SERIAL PRIMARY KEY, shortlink TEXT NOT NULL UNIQUE, url TEXT NOT NULL);
+CREATE TABLE links (
+    id serial PRIMARY KEY,
+    shortlink text NOT NULL UNIQUE,
+    url text NOT NULL
+);
+
