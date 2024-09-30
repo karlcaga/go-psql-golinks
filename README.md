@@ -38,7 +38,7 @@ INSERT INTO links (shortlink, url) VALUES ('golinks', 'https://github.com/karlca
 
 ## Using shortlinks
 
-In your OS' `hosts` file, add a line with your server's domain name and go.
+In your system's `hosts` file, add a line like `<SERVER DOMAIN> go`.
 For example, if you're hosting this at `go.karlcaga.com` then add
 ```
 go.karlcaga.com go
@@ -48,7 +48,7 @@ Then go to http://go/golinks to make your browser redirect to this repo.
 
 ## Deleting shortlinks
 
-To delete `shortlinks` from your db, run
+To delete `shortlinks` from your DB, run
 ```sql
 DELETE FROM links WHERE shortlink='<shortlink>';
 ```
