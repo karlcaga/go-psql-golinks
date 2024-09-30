@@ -21,10 +21,10 @@ func main() {
 		log.Fatal("Error loading .env file")
 	}
 
-	var err error
-	db, err = sql.Open("postgres", os.Getenv("CONN_STR"))
-	if err != nil {
-		log.Fatal(err)
+	var dbErr error
+	db, dbErr = sql.Open("postgres", os.Getenv("CONN_STR"))
+	if dbErr != nil {
+		log.Fatal(dbErr)
 	}
 
 	pingErr := db.Ping()
