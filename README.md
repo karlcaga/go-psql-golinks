@@ -1,4 +1,4 @@
-Hello! `go-psql-golinks` is an implementation of the popular `golinks` functionality for sharing URLs as user-defined string using Go for the HTTP server and PostgreSQL for the link database.
+`go-psql-golinks` is an implementation of the popular `golinks` functionality for sharing URLs as user-defined string using Go for the HTTP server and PostgreSQL for the link database.
 
 # Installation
 Clone this repo
