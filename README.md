@@ -22,6 +22,20 @@ go build .
 
 # Usage
 
+Adding and removing `shortlinks` is done directly on the DB with SQL.
+
+## Adding shortlinks
+
+To add shortlinks to your DB, run
+```sql
+INSERT INTO links (shortlink, url) VALUES ('<shortlink>', '<URL>');
+```
+
+For example, to add https://go/golinks to this repo, run
+```sql
+INSERT INTO links (shortlink, url) VALUES ('golinks', 'https://github.com/karlcaga/go-psql-golinks');
+``` 
+
 ## Using shortlinks
 
 In your OS' `hosts` file, add a line with your server's domain name and go.
@@ -30,20 +44,7 @@ For example, if you're hosting this at `go.karlcaga.com` then add
 go.karlcaga.com go
 ```
 
-Then go to http://go/`shortlink` to access a `shortlink` in your database.
-
-## Adding shortlinks
-To add shortlinks to your DB, run
-```sql
-INSERT INTO links (shortlink, url) VALUES ('<shortlink>', '<URL>');
-```
-
-For example, to add https://go/golink to this repo, run
-```sql
-INSERT INTO links (shortlink, url) VALUES ('golink', 'https://github.com/karlcaga/go-psql-golinks');
-``` 
-
-We do not provide a user interface for adding `golinks`, instead you may add them directly to your database.
+Then go to http://go/golinks to make your browser redirect to this repo.
 
 ## Deleting shortlinks
 
@@ -52,7 +53,7 @@ To delete `shortlinks` from your db, run
 DELETE FROM links WHERE shortlink='<shortlink>';
 ```
 
-For example, to remove https://go/golink, run
+For example, to remove https://go/golinks, run
 ```sql
-DELETE FROM links WHERE shortlink='golink';
+DELETE FROM links WHERE shortlink='golinks';
 ```
