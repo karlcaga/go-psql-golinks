@@ -42,7 +42,7 @@ func handleShortLink(w http.ResponseWriter, r *http.Request) {
 	shortlink := r.PathValue("shortlink")
 	url, err := getURL(shortlink)
 	if err != nil {
-		http.Error(w, fmt.Sprintf("Error obtaining URL: %v", err), 500)
+		http.Error(w, fmt.Sprintf("Error obtaining URL: %v", err), 404)
 		return
 	}
 	http.Redirect(w, r, url, http.StatusSeeOther)
