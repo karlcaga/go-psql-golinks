@@ -16,9 +16,11 @@ var db *sql.DB
 
 func main() {
 	log.SetPrefix("golinks: ")
-	envErr := godotenv.Load()
-	if envErr != nil {
-		log.Fatal("Error loading .env file")
+	if os.Getenv("CONN_STR") == "" {
+		envErr := godotenv.Load()
+		if envErr != nil {
+			log.Fatal("Error loading .env file")
+		}
 	}
 
 	var dbErr error
