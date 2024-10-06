@@ -62,7 +62,7 @@ DELETE FROM links WHERE shortlink='golinks';
 
 Build the container with 
 ```
-docker build -t golinks
+docker build -t golinks .
 ```
 
 Run the container with
