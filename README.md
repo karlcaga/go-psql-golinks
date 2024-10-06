@@ -58,7 +58,7 @@ For example, to remove https://go/golinks, run
 DELETE FROM links WHERE shortlink='golinks';
 ```
 
-# Docker instructions
+# Docker Instructions
 
 Build the container with 
 ```
