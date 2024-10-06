@@ -57,3 +57,15 @@ For example, to remove https://go/golinks, run
 ```sql
 DELETE FROM links WHERE shortlink='golinks';
 ```
+
+# Docker Instructions
+
+Build the container with 
+```
+docker build -t golinks .
+```
+
+Run the container with
+``` 
+docker run --env-file=.env -d -p 8080:8080 golinks
+```
