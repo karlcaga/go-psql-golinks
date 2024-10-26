@@ -69,3 +69,17 @@ Run the container with
 ``` 
 docker run --env-file=.env -d -p 8080:8080 golinks
 ```
+
+# Kubernetes Instructions
+
+If you want to deploy this app using Kubernetes, apply the pod golinks-pod.yaml using
+```
+kubectl apply -f golinks-pod.yaml
+```
+You will need to edit the env var `CONN_STR` with your own DB connection string.
+
+To test this, you can port-forward to your local machine using
+```
+kubectl port-forward <PODNAME> 8080:8080
+```
+Check functionality by entering http://localhost:8080/pplox into your web browser.
