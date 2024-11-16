@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: golinks-deployment
+  labels:
+    app: golinks-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: golinks-deployment
+  template:
+    metadata:
+      labels:
+        app: golinks-deployment
+    spec:
+      containers:
+      - name: golinks
+        image: ghcr.io/karlcaga/go-psql-golinks:main
+        env:
+        - name: CONN_STR
+          valueFrom:
+            secretKeyRef:
+              name: conn-str
+              key: conn-str
+        ports:
+        - containerPort: 8080

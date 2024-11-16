@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: golinks-ingress
+spec:
+  defaultBackend:
+    service:
+      name: golinks
+      port:
+        number: 8080
+  rules:
+  - host: golinks.example.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: golinks
+            port:
+              number: 8080
